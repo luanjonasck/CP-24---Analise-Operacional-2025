@@ -1,0 +1,5 @@
+# Dados Sensíveis - Não subir para o repositório
+Clientes_clean.csv
+
+# Alternativamente, ignore todos os CSVs de dados se não forem estruturais
+#*.csv
