@@ -3,6 +3,7 @@ Clientes_clean.csv
 desktop.ini
 .ipynb_checkpoints/
 ~$*
-
+24_C_P_MENSALISTAS.csv
+24_C_P - base.csv
 # Alternativamente, ignore todos os CSVs de dados se não forem estruturais
 #*.csv
