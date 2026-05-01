@@ -1,5 +1,8 @@
 # Dados Sensíveis - Não subir para o repositório
 Clientes_clean.csv
+desktop.ini
+.ipynb_checkpoints/
+~$*
 
 # Alternativamente, ignore todos os CSVs de dados se não forem estruturais
 #*.csv
