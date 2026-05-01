@@ -50,30 +50,3 @@ As transformações de dados revelaram gargalos e oportunidades claras de alavan
 
 
 
-
----
-
-## 📂 Arquitetura do Repositório (DataOps & Pipeline)
-A estrutura de diretórios foi desenhada para garantir reprodutibilidade, escalabilidade e a separação estrita entre a experimentação estatística e o código produtivo. Utilizamos uma adaptação da *Medallion Architecture* para os dados físicos.
-```text
-CP-24---Analise-Operacional-2025/
-│
-├── README.md              <- Documentação central do projeto e contrato de dados.
-├── requirements.txt       <- Dependências do ambiente Python (Pandas, NumPy, etc).
-├── .gitignore             <- Exclusão rigorosa de dados sensíveis e arquivos compilados.
-│
-├── data/                  <- [NÃO VERSIONADO - IGNORADO PELO GIT]
-│   ├── raw/               <- (Bronze) Dados originais/imutáveis (Logs nativos e cadastros). Proibida a alteração manual.
-│   └── processed/         <- (Gold) Bases refinadas e tabelas de fatos/dimensões para consumo.
-│
-├── notebooks/             <- (Sandbox) Ambientes interativos (.ipynb) para Análise Exploratória (EDA) e testes de hipóteses estatísticas (v1, v2).
-│
-├── src/                   <- (Produção) Scripts modulares em Python contendo o pipeline de ETL automatizável.
-│   ├── extract.py         <- Ingestão automatizada e parse de tipagem de dados.
-│   ├── transform.py       <- Tratamento de NaNs, cálculo do RevPAH, vetorização de regras de negócio.
-│   ├── validate.py        <- Data Quality: assertivas de integridade relacional e distribuição.
-│   └── export.py          <- Escrita otimizada para o Data Lake / persistência no disco.
-│
-├── reports/               <- Entregáveis estáticos. Pareceres executivos, simulações de EBITDA e apresentações (PDFs).
-│
-└── dashboards/            <- Arquivos do Power BI (.pbix) contendo o front-end analítico.
